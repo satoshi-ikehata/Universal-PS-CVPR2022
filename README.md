@@ -2,23 +2,16 @@
 Official Pytorch Implementation of Universal Photometric Stereo Network using Global Lighting Contexts (CVPR2022)
 
 ```
-S. Ikehata, "Universal Photometric Stereo Network using Global Contexts", CVPR2022
+Satoshi Ikehata, "Universal Photometric Stereo Network using Global Contexts", CVPR2022
 ```
-
-[project page](https://satoshi-ikehata.github.io/cvpr2022/univps_cvpr2022.html)
-
 <p align="center">
-<img src="webimg/top.png" width="800">  
+<a href="https://satoshi-ikehata.github.io/cvpr2022/univps_cvpr2022.html"> <img src="webimg/top.png" width="800", alt="project site">  </a>
 </p>
 <!-- <p align="center">
 (top) Surface normal estimation result from 10 images, (bottom) ground truth.
 </p> -->
 
-
-
-
 ## Prerequisites
-
 - Python3
 - torch
 - tensorboard
