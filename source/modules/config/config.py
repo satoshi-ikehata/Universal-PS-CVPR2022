@@ -4,15 +4,12 @@ import numpy as np
 
 class setup_configuration():
     def __init__(self):
-        self.abciroot = '../../../'
-        self.img_channels = 3
-        self.train_datatype = 'AdobeNPI'
-        self.train_suffix= '0*'
-        self.train_ext = '.data'
-        self.train_imgscale = 1.0
-        self.train_maxNumberOfImages = 10
-        self.test_datatype = 'RealData'
-        self.test_suffix = 'L*'
-        self.test_ext = '.data'
-        self.test_imgscale = 1.0
-        self.test_maxNumberOfImages = 10
+        self.img_channels = 3 # RGB
+        self.train_datatype = 'AdobeNPI' # Train Data Type (Fix)
+        self.train_prefix= '0*' # only images with this prefix are loaded
+        self.train_suffix = '.data' #only directories with this suffix are loaded
+        self.train_maxNumberOfImages = 10 # max number of training images
+        self.test_datatype = 'RealData' # Test Data Type (Fix)
+        self.test_prefix = 'L*' # only images with this prefix are loaded
+        self.test_suffix = '.data' # only directories with this suffix are loaded
+        self.test_maxNumberOfImages = 10 # max number of test images

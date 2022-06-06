@@ -65,11 +65,12 @@ class dataloader():
         print('PSFCN_NORMALIZED')
         return imgs
 
-    def load(self, objlist, objid,  suffix, scale = 1.0, margin = 0):
+    def load(self, objlist, objid,  prefix):
+        scale = 1.0
 
         self.objname = objlist[objid].split('/')[-1]
         directlist = []
-        [directlist.append(p) for p in glob.glob(objlist[objid] + '/%s' % suffix,recursive=True) if os.path.isfile(p)]
+        [directlist.append(p) for p in glob.glob(objlist[objid] + '/%s' % prefix,recursive=True) if os.path.isfile(p)]
         directlist = sorted(directlist)
 
 

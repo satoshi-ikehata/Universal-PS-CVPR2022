@@ -44,7 +44,7 @@ class dataloader():
         return imgs
 
 
-    def load(self, objlist, objid,  suffix, scale = 1.0, margin = 0, loader_imgsize = 256):
+    def load(self, objlist, objid,  prefix,  margin = 0, loader_imgsize = 256):
 
         self.objname = re.split(r'\\|/',objlist[objid])[-1]
         self.data_workspace = f'{self.outdir}/{self.objname}'
@@ -52,7 +52,7 @@ class dataloader():
 
 
         directlist = []
-        [directlist.append(p) for p in glob.glob(objlist[objid] + '/%s' % suffix,recursive=True) if os.path.isfile(p)]
+        [directlist.append(p) for p in glob.glob(objlist[objid] + '/%s' % prefix,recursive=True) if os.path.isfile(p)]
         directlist = sorted(directlist)
         distort = True
 
@@ -81,8 +81,8 @@ class dataloader():
             if i == 0:
                 h_ = img.shape[0]
                 w_ = img.shape[1]
-                h0 = int(scale * h_)
-                w0 = int(scale * w_)
+                h0 = int(h_)
+                w0 = int(w_)
                 h = imgsize
                 w = imgsize
                 margin = 4

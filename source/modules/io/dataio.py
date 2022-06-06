@@ -12,20 +12,18 @@ class dataio(data.Dataset):
 
         if mode == 'Train':
             data_root = [args.training_dir]
-            extension = conf.train_ext
+            extension = conf.train_prefix
             self.numberOfImageBuffer = conf.train_maxNumberOfImages
             self.datatype = conf.train_datatype
-            self.suffix= conf.train_suffix
-            self.scale = conf.train_imgscale
+            self.prefix= conf.train_prefix
             self.outdir = outdir
 
         elif mode == 'Test':
             data_root = [args.test_dir]
-            extension = conf.test_ext
+            extension = conf.test_prefix
             self.numberOfImageBuffer = conf.test_maxNumberOfImages
             self.datatype = conf.test_datatype
-            self.suffix= conf.test_suffix
-            self.scale = conf.test_imgscale
+            self.prefix= conf.test_prefix
             self.outdir = outdir
         else:
             print("mode must be from [Train, Test]", file=sys.stderr)
@@ -64,9 +62,9 @@ class dataio(data.Dataset):
 
         objid = index_
         if self.datatype == 'AdobeNPI':
-            self.data.load(self.objlist, objid, suffix = self.suffix, scale = self.scale)
+            self.data.load(self.objlist, objid, prefix = self.prefix)
         elif self.datatype == 'RealData':
-            self.data.load(self.objlist, objid, suffix = self.suffix, scale = self.scale, loader_imgsize = self.loader_imgsize[0])
+            self.data.load(self.objlist, objid, prefix = self.prefix, loader_imgsize = self.loader_imgsize[0])
 
         else:
             raise Exception(' "datatype" != in "Cycles, Adobe, DiLiGenT"')

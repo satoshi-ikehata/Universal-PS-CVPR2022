@@ -25,19 +25,21 @@ Official Pytorch Implementation of Universal Photometric Stereo Network using Gl
 - torch
 - tensorboard
 - cv2
-- scipy
+- timm
+- tqdm
 
 Tested on:
-- Ubuntu 20.04/Windows10, Python 3.7.5, Pytorch 1.6.0, CUDA 10.2
-  - GPU: NvidiaQuadroRTX8000 (64GB)
+- Windows11, Python 3.10.3, Pytorch 1.11.0, CUDA 11.3
+  - GPU: Nvidia RTX A6000 (48GB)
 
 ### Running the test
-For testing the network on DiLiGenT benchmark by Boxin Shi [2], please download [DiLiGenT dataset (DiLiGenT.zip)](https://sites.google.com/site/photometricstereodata/)  and extract it at [USER_PATH].
+Download the pretrained model from https://www.dropbox.com/sh/pphprxqbayoljpn/AADUPNcAdOWkbGwRK6xo5Wura?dl=0 to YOUR_CHECKPOINT_PATH
+Download the real dataset from the project page: https://satoshi-ikehata.github.io/cvpr2022/univps_cvpr2022.html to YOUR_DATA_PTH 
 
-Then, please run main.py with the DiLiGenT path as an argument.
+Then, please run main.py as 
 
 ```
-python main.py --diligent [USER_PATH]/DiLiGenT/pmsData
+python source/main.py --session_name session_test  --mode Test --test_dir YOUR_DATA_PATH --pretrained YOUR_CHECKPOINT_PATH
 ```
 
 You can change the number of test images (default:10) as 
