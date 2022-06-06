@@ -49,7 +49,7 @@ All training and test data must be formatted like this:
       └── ...
   ```
 
-You can change the configuration (e.g., prefix, suffix) at <a href="https://github.com/satoshi-ikehata/Universal-PS-CVPR2022/tree/main/source">source\modules\config.py</a>.
+You can change the configuration (e.g., prefix, suffix) at <a href="https://github.com/satoshi-ikehata/Universal-PS-CVPR2022/tree/main/source/modules/config.py">source\modules\config.py</a>.
 
 
 All masks in our datasets were computed using <a href="https://github.com/saic-vul/ritm_interactive_segmentation">the software by Konstantin</a>.
@@ -86,5 +86,7 @@ python source/main.py --session_name session_train  --mode Train --training_dir 
 
 The default hyper parameters are described in <a href="https://github.com/satoshi-ikehata/Universal-PS-CVPR2022/tree/main/source/main.py">source/main.py</a>.
 
+The trainind data is not ready yet. I will distribute them before CVPR2022.
+
 ## License
-This project is licensed under the BSD License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GPL License - see the [LICENSE](LICENSE) file for details
