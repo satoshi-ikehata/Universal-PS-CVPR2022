@@ -73,11 +73,11 @@ python source/main.py --session_name session_test --mode Test --test_dir YOUR_DA
 Results will be put in ouput/session_name. 
 
 ## Running the training
-For running training, please run main.py as
+For running training, please run main.py as:
 ```
 python source/main.py --session_name session_train --mode Train --training_dir YOUR_DATA_PATH
 ```
-or if you want to perform both training and test, instead use as 
+or if you want to perform both training and test, instead use this:
 
 ```
 python source/main.py --session_name session_train_test --mode TrainAndTst --training_dir YOUR_DATA_PATH --test_dir YOUR_DATA_PATH
@@ -85,7 +85,7 @@ python source/main.py --session_name session_train_test --mode TrainAndTst --tra
 
 The default hyperparameters are described in <a href="https://github.com/satoshi-ikehata/Universal-PS-CVPR2022/tree/main/source/main.py">source/main.py</a>.
 
-The trainind data is not ready yet. I will distribute them before CVPR2022.
+The trainind data (PS-Wild) will be distributed before CVPR2022.
 
 ## License
 This project is licensed under the GPL License - see the [LICENSE](LICENSE) file for details
