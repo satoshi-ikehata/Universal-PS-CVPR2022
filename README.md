@@ -32,43 +32,40 @@ Tested on:
 - Windows11, Python 3.10.3, Pytorch 1.11.0, CUDA 11.3
   - GPU: Nvidia RTX A6000 (48GB)
 
+### Dataset Formart
+All training and test data must be formatted like this:
+
+```bash
+  $ tree data
+ Data
+  ├── A [Suffix:default ".data"]
+  │   ├── mask.png
+  │   ├── [Prefix (default:"0" (Train), "L" (Test))] imgfile1
+  │   ├── [Prefix (default:"0" (Train), "L" (Test))] imgfile2
+  │   └── ...
+  └── B [Suffix:default ".data"]
+  │   ├── mask.png
+  │   ├── [Prefix (default:"0" (Train), "L" (Test))] imgfile1
+  │   ├── [Prefix (default:"0" (Train), "L" (Test))] imgfile2
+  │   └── ...
+   ```
+
 ### Running the test
-Download the pretrained model from https://www.dropbox.com/sh/pphprxqbayoljpn/AADUPNcAdOWkbGwRK6xo5Wura?dl=0 to YOUR_CHECKPOINT_PATH
-Download the real dataset from the project page: https://satoshi-ikehata.github.io/cvpr2022/univps_cvpr2022.html to YOUR_DATA_PTH 
+Download the pretrained model from  <a href="https://www.dropbox.com/sh/pphprxqbayoljpn/AADUPNcAdOWkbGwRK6xo5Wura?dl=0">here</a>
+e.g., YOUR_CHECKPOINT_PATH/***.pytmodel
+
+Download the real dataset from <a href="https://satoshi-ikehata.github.io/cvpr2022/univps_cvpr2022.html">here</a>
+e.g., YOUR_DATA_PTH/apple.data
 
 Then, please run main.py as 
 
 ```
 python source/main.py --session_name session_test  --mode Test --test_dir YOUR_DATA_PATH --pretrained YOUR_CHECKPOINT_PATH
 ```
+Results will be put in ouput/session_name
 
-You can change the number of test images (default:10) as 
+You can change the test configuration by source\modules\config
 
-```
-python main.py --diligent [USER_PATH]/DiLiGenT/pmsData --n_testimg 5
-```
-
-Please note that the lighting directions are randomly chosen, therefore the results are different every time.
-
-### Pretrained Model
-The pretrained model (our "full" configuration) is available at https://www.dropbox.com/s/64i4srb2vue9zrn/pretrained.zip?dl=0.
-Please extract it at "PS-Transformer-BMVC2021/pretrained".
-
-### Output
-If the program properly works, you will get average angular errors (in degrees) for each dataset.
-
-You can use [TensorBoard](https://www.tensorflow.org/tensorboard?hl=en) for visualizing your output. The log file will be saved at
-
-
-```
-[LOGFILE] = 'Tensorboard/[SESSION_NAME (default:eval)]'
-```
-
-Then, please run TensorBoard as
-
-```
-tensorboard --logdir [YOURLOGFILE]
-```
 
 ### Important notice about DiLiGenT datasets
 
