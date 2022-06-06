@@ -12,4 +12,4 @@ class setup_configuration():
         self.test_datatype = 'RealData' # Test Data Type (Fix)
         self.test_prefix = 'L*' # only images with this prefix are loaded
         self.test_suffix = '.data' # only directories with this suffix are loaded
-        self.test_maxNumberOfImages = 10 # max number of test images
+        self.test_maxNumberOfImages = 64 # max number of test images
