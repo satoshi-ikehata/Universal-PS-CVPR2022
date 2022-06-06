@@ -12,7 +12,7 @@ class dataio(data.Dataset):
 
         if mode == 'Train':
             data_root = [args.training_dir]
-            extension = conf.train_prefix
+            extension = conf.train_suffix
             self.numberOfImageBuffer = conf.train_maxNumberOfImages
             self.datatype = conf.train_datatype
             self.prefix= conf.train_prefix
@@ -20,7 +20,7 @@ class dataio(data.Dataset):
 
         elif mode == 'Test':
             data_root = [args.test_dir]
-            extension = conf.test_prefix
+            extension = conf.test_suffix
             self.numberOfImageBuffer = conf.test_maxNumberOfImages
             self.datatype = conf.test_datatype
             self.prefix= conf.test_prefix
