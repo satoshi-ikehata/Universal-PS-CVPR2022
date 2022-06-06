@@ -3,8 +3,6 @@ import os
 import cv2
 import numpy as np
 import os
-from numpy import unique
-from scipy.stats import entropy as scipy_entropy
 
 
 def horizontal_flip(I, N, M): # [? h, w, ? ...]
@@ -66,27 +64,6 @@ class dataloader():
         imgs = [img.reshape(h, w, -1) for img in imgs]
         print('PSFCN_NORMALIZED')
         return imgs
-
-
-    def entropy_normal(self, objlist, objid, objset = 0, div = 32, scale = 1, nml_filename = 'normal.tif'):
-        objlist = objlist[objset]
-        img_dir = objlist[objid]
-
-
-        nml_path = img_dir + '/%s' % nml_filename
-        N = np.float32(cv2.resize(cv2.cvtColor(cv2.imread(nml_path, flags = cv2.IMREAD_ANYCOLOR | cv2.IMREAD_ANYDEPTH), cv2.COLOR_BGR2RGB), dsize=None, fx=scale, fy=scale,interpolation=cv2.INTER_NEAREST))/65535.0
-        N = 2 * N - 1
-        mask = np.abs(1 - np.sqrt(np.sum(N*N, axis=2))) < 1.0e-3
-        h = N.shape[0]
-        w = N.shape[1]
-        N = np.reshape(N, (h * w, 3))
-        ids = np.nonzero(mask)
-        valid = ids[0] * w + ids[1]
-        p = N[valid,0] * 0.5 * (div) + 0.5 * (div);
-        q = N[valid,1] * 0.5 * (div) + 0.5 * (div);
-        index = q.astype(np.uint32) * div + p.astype(np.uint32)
-        _, counts = unique(index, return_counts=True)
-        return scipy_entropy(counts)
 
     def load(self, objlist, objid,  suffix, scale = 1.0, margin = 0):
 

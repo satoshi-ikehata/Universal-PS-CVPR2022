@@ -1,5 +1,4 @@
 from .model_utils import *
-from ..utils.show_tensor import *
 from ..utils.ind2sub import *
 import os
 import glob
