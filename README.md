@@ -50,9 +50,7 @@ All training and test data must be formatted like this:
   ```
 
 ### Running the test
-Download the pretrained model from  <a href="https://www.dropbox.com/sh/pphprxqbayoljpn/AADUPNcAdOWkbGwRK6xo5Wura?dl=0">here</a>
-Extract all of them as e.g., YOUR_CHECKPOINT_PATH/*.ptmodel, *.optimizer, *.scheduler
-
+Download the pretrained model from  <a href="https://www.dropbox.com/sh/pphprxqbayoljpn/AADUPNcAdOWkbGwRK6xo5Wura?dl=0">here</a> and extract all of them as 
 ```bash
   YOUR_CHECKPOINT_PATH
   ├── *.pytmodel
