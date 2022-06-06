@@ -31,7 +31,7 @@ Tested on:
   - GPU: Nvidia RTX A6000 (48GB)
 
 ## Prepare dataset
-All you need for running the universal photometric stereo network is shading images and a binary object mask. The object could be illuminated under arbitrary lighting sources but shading variations should be sufficient (weak shading variations may result in poor results.).
+All you need for running the universal photometric stereo network is shading images and a binary object mask. The object could be illuminated under arbitrary lighting sources but shading variations should be sufficient (weak shading variations may result in poor results).
 
 In my implementation, all training and test data must be formatted like this:
 
@@ -49,6 +49,7 @@ In my implementation, all training and test data must be formatted like this:
       └── ...
   ```
 
+For more details, please see my real dataset at <a href="https://satoshi-ikehata.github.io/cvpr2022/univps_cvpr2022.html">project page</a>.
 You can change the configuration (e.g., prefix, suffix) at <a href="https://github.com/satoshi-ikehata/Universal-PS-CVPR2022/tree/main/source/modules/config.py">source\modules\config.py</a>.
 
 
