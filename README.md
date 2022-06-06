@@ -17,9 +17,7 @@ S. Ikehata, "Universal Photometric Stereo Network using Global Contexts", CVPR20
 
 
 
-## Getting Started
-
-### Prerequisites
+## Prerequisites
 
 - Python3
 - torch
@@ -32,8 +30,10 @@ Tested on:
 - Windows11, Python 3.10.3, Pytorch 1.11.0, CUDA 11.3
   - GPU: Nvidia RTX A6000 (48GB)
 
-### Prepare dataset
-All training and test data must be formatted like this:
+## Prepare dataset
+All you need for running the universal photometric stereo network is shading images and a binary object mask. The object could be illuminated under arbitrary lighting sources but shading variations should be sufficient (weak shading variations may result in poor results.).
+
+In my implementation, all training and test data must be formatted like this:
 
 ```bash
  YOUR_DATA_PATH
@@ -54,7 +54,7 @@ You can change the configuration (e.g., prefix, suffix) at <a href="https://gith
 
 All masks in our datasets were computed using <a href="https://github.com/saic-vul/ritm_interactive_segmentation">the software by Konstantin</a>.
 
-### Download pretrained model 
+## Download pretrained model 
 Checkpoints of the network parameters (The full configuration in the paper) are available at <a href="https://www.dropbox.com/sh/pphprxqbayoljpn/AADUPNcAdOWkbGwRK6xo5Wura?dl=0">here</a> 
 
 To use pretrained models, extract them as
@@ -68,23 +68,28 @@ To use pretrained models, extract them as
 
   ```
 
-### Running the test
+## Running the test
 If you don't prepare dataset by yourself, please use some sample dataset from <a href="https://satoshi-ikehata.github.io/cvpr2022/univps_cvpr2022.html">here</a>
 
 For running test, please run main.py as 
 
 ```
-python source/main.py --session_name session_test  --mode Test --test_dir YOUR_DATA_PATH --pretrained YOUR_CHECKPOINT_PATH
+python source/main.py --session_name session_test --mode Test --test_dir YOUR_DATA_PATH --pretrained YOUR_CHECKPOINT_PATH
 ```
 Results will be put in ouput/session_name. 
 
-### Running the training
+## Running the training
 For running training, please run main.py as
 ```
-python source/main.py --session_name session_train  --mode Train --training_dir YOUR_DATA_PATH
+python source/main.py --session_name session_train --mode Train --training_dir YOUR_DATA_PATH
+```
+or if you want to perform both training and test, instead use as 
+
+```
+python source/main.py --session_name session_train_test --mode TrainAndTst --training_dir YOUR_DATA_PATH --test_dir YOUR_DATA_PATH
 ```
 
-The default hyper parameters are described in <a href="https://github.com/satoshi-ikehata/Universal-PS-CVPR2022/tree/main/source/main.py">source/main.py</a>.
+The default hyperparameters are described in <a href="https://github.com/satoshi-ikehata/Universal-PS-CVPR2022/tree/main/source/main.py">source/main.py</a>.
 
 The trainind data is not ready yet. I will distribute them before CVPR2022.
 
