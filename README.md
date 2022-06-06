@@ -70,7 +70,7 @@ For running test, please run main.py as
 ```
 python source/main.py --session_name session_test --mode Test --test_dir YOUR_DATA_PATH --pretrained YOUR_CHECKPOINT_PATH
 ```
-Results will be put in ouput/session_name. 
+Results will be put in ouput/session_name. You will find normal maps of the canonical resolution and input resolution. 
 
 ## Running the training
 For running training, please run main.py as:
