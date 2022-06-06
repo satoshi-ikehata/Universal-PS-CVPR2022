@@ -36,7 +36,7 @@ Tested on:
 All training and test data must be formatted like this:
 
 ```bash
- Data
+ YOUR_DATA_PATH
   ├── A [Suffix:default ".data"]
   │   ├── mask.png
   │   ├── [Prefix (default:"0" (Train), "L" (Test))] imgfile1
@@ -49,9 +49,10 @@ All training and test data must be formatted like this:
       └── ...
   ```
 
-You can change the configuration (e.g., prefix, suffix) by source\modules\config
+You can change the configuration (e.g., prefix, suffix) at <a href="https://github.com/satoshi-ikehata/Universal-PS-CVPR2022/tree/main/source">source\modules\config.py</a>.
 
-All masks in our datasets were computed using <a href="https://github.com/saic-vul/ritm_interactive_segmentation">software</a> by Konstantin.
+
+All masks in our datasets were computed using <a href="https://github.com/saic-vul/ritm_interactive_segmentation">the software by Konstantin</a>.
 
 ### Download pretrained model 
 Checkpoints of the network parameters (The full configuration in the paper) are available at <a href="https://www.dropbox.com/sh/pphprxqbayoljpn/AADUPNcAdOWkbGwRK6xo5Wura?dl=0">here</a> 
@@ -78,8 +79,12 @@ python source/main.py --session_name session_test  --mode Test --test_dir YOUR_D
 Results will be put in ouput/session_name. 
 
 ### Running the training
-The training script is NOT supported yet (will be available soon!).
-However, the training dataset is alraedy available. Please send a request to sikehata@nii.ac.jp
+For running training, please run main.py as
+```
+python source/main.py --session_name session_train  --mode Train --training_dir YOUR_DATA_PATH
+```
+
+The default hyper parameters are described in <a href="https://github.com/satoshi-ikehata/Universal-PS-CVPR2022/tree/main/source/main.py">source/main.py</a>.
 
 ## License
 This project is licensed under the BSD License - see the [LICENSE.md](LICENSE.md) file for details
