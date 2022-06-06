@@ -36,7 +36,6 @@ Tested on:
 All training and test data must be formatted like this:
 
 ```bash
-  $ tree data
  Data
   ├── A [Suffix:default ".data"]
   │   ├── mask.png
@@ -44,15 +43,24 @@ All training and test data must be formatted like this:
   │   ├── [Prefix (default:"0" (Train), "L" (Test))] imgfile2
   │   └── ...
   └── B [Suffix:default ".data"]
-  │   ├── mask.png
-  │   ├── [Prefix (default:"0" (Train), "L" (Test))] imgfile1
-  │   ├── [Prefix (default:"0" (Train), "L" (Test))] imgfile2
-  │   └── ...
-   ```
+      ├── mask.png
+      ├── [Prefix (default:"0" (Train), "L" (Test))] imgfile1
+      ├── [Prefix (default:"0" (Train), "L" (Test))] imgfile2
+      └── ...
+  ```
 
 ### Running the test
 Download the pretrained model from  <a href="https://www.dropbox.com/sh/pphprxqbayoljpn/AADUPNcAdOWkbGwRK6xo5Wura?dl=0">here</a>
-e.g., YOUR_CHECKPOINT_PATH/***.pytmodel
+Extract all of them as e.g., YOUR_CHECKPOINT_PATH/*.ptmodel, *.optimizer, *.scheduler
+
+```bash
+  YOUR_CHECKPOINT_PATH
+  ├── *.pytmodel
+  ├── *.optimizer
+  ├── *.scheduler
+  └── ...
+
+  ```
 
 Download the real dataset from <a href="https://satoshi-ikehata.github.io/cvpr2022/univps_cvpr2022.html">here</a>
 e.g., YOUR_DATA_PTH/apple.data
