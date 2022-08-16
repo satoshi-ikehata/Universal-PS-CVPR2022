@@ -85,7 +85,7 @@ python source/main.py --session_name session_train_test --mode TrainAndTst --tra
 
 The default hyperparameters are described in <a href="https://github.com/satoshi-ikehata/Universal-PS-CVPR2022/tree/main/source/main.py">source/main.py</a>.
 
-The trainind data (PS-Wild) will be distributed before CVPR2022.
+The trainind data (PS-Wild) can be download from <a href="https://www.dropbox.com/sh/4gzg2t5h5760ona/AABclGJeH36xno6rO2J1ip_Va?dl=0">here</a>.
 
 ## License
 This project is licensed under the GPL License - see the [LICENSE](LICENSE) file for details
