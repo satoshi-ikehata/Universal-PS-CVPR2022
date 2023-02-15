@@ -31,7 +31,6 @@ class builder():
             cnt = 0
             for batch in tqdm(train_data_loader, leave=False):
                 global_step = epoch * len(train_data_loader) + cnt
-                continue
 
                 """ test every steps_per_test """
                 if np.mod(global_step, steps_per_test) == 0 and mode == 'TrainAndTest' and cnt > 0:
