@@ -81,7 +81,7 @@ python source/main.py --session_name session_train --mode Train --training_dir Y
 or if you want to perform both training and test, instead use this:
 
 ```
-python source/main.py --session_name session_train_test --mode TrainAndTst --training_dir YOUR_DATA_PATH --test_dir YOUR_DATA_PATH
+python source/main.py --session_name session_train_test --mode TrainAndTest --training_dir YOUR_DATA_PATH --test_dir YOUR_DATA_PATH
 ```
 
 The default hyperparameters are described in <a href="https://github.com/satoshi-ikehata/Universal-PS-CVPR2022/tree/main/source/main.py">source/main.py</a>.
